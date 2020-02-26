@@ -1,6 +1,6 @@
 <%- include ../partials/header %>
 <body>
-  <form action="flights" method="POST">
+  <form id="new-flight-form" action="flights" method="POST">
       <label>Airline:
         <select name="airline">
             <option value="American Airlines">American</option>
@@ -24,7 +24,7 @@
         <input type="datetime-local" name="departure">
       </label><br>
       
-      <input type="submit" value="Add Flight">
+      <input id="new-flight-btn" type="submit" value="Add Flight">
   </form> 
   </body>
   

@@ -19,7 +19,7 @@ function newFlight(req, res) {
   var newFlight = new Flight();
   var dt = newFlight.departure;
   var destDate = `${dt.getFullYear()}-${dt.getMonth() + 1}-${dt.getDate()}T${dt.getHours().toString().padStart(2, '0')}:${dt.getMinutes().toString().padStart(2, '0')}`;
-  res.render('flights/new', {title: 'New Flights', destDate});
+  res.render('flights/new', {title: 'New Flight', destDate});
   // res.render('flights/new', { title: 'New Flight' });
 }
 function create(req, res) {
