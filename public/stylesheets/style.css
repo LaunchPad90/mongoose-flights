@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Helvetica;
-    color: #424748;
+    color: #272728;
   }
   
   body {
@@ -15,7 +15,7 @@
   
   body > nav {
     grid-area: nav;
-    background-color: #B8C0C2;
+    background-color: rgb(48, 101, 237);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -30,6 +30,7 @@
   nav > a {
     margin: 20px;
     text-decoration: none;
+    color: white;
     padding: 10px;
     border-radius: 5px;
   }
@@ -67,4 +68,13 @@
   #new-flight-btn {
       padding: 5px;
       font-size: 1rem;
+  }
+
+  #show-page {
+      margin: 0 auto;
+  }
+
+  #edit-flight-form {
+    display: grid;
+    margin: 0 auto;
   }

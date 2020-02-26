@@ -34,7 +34,7 @@ function create(req, res) {
 function show(req, res) {
   console.log(req.body)
   Flight.findById(req.params.id, function(err, flight) {
-    console.log(req.params.id);
-    res.render('flights/show', { title: 'Edit Flight', flight, flightNum: req.params.id});
+    res.render('flights/show', { title: 'Edit Flight', flight });
+    console.log('poop', flight)
   });
 }
