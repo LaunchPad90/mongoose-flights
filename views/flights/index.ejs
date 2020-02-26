@@ -1,0 +1,29 @@
+<%- include ../partials/header %>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Flight #</th>
+        <th>Departure Date</th>
+        <th>Airport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flights.forEach(function(f) { %>
+        <% flights.sort(function(a, b) { %> 
+          <% return a.departure - b.departure %> 
+        <% }) %> 
+        <tr>
+          <td><%= f.airline %></td>
+          <td><%= f.flightNo %></td>
+          <td><%= f.departure %></td>
+          <td><%= f.airport %></td>
+          <td><a href="/flights/<%= `f.${f._id}` %>">FLIGHT INFO</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    
+<%- include('../partials/footer') %>
