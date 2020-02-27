@@ -7,7 +7,8 @@ const destinationSchema = new Schema({
         enum: ['ATX', 'DFW', 'DEN', 'LAX', 'SD']
     },
     arrival: {
-        type: Date
+        type: Date,
+        required: true
     }
 }, {
     timestamps: true
@@ -39,8 +40,7 @@ const flightSchema = new Schema({
     destination: [destinationSchema],
 
     arrival: {
-        type: Schema.Types.ObjectId,
-        ref: 'Destination'
+        type: Date
     },
     
 }, {

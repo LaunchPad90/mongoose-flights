@@ -24,7 +24,7 @@
       </tbody>
     </table>   
   </form> <br>
-  <form id="new-flight-form" method="POST" action="/show">
+  <form id="new-flight-form" method="POST" action="/destinations/<%= flight._id %>">
     <label>Destination:
       <select name="airport">
           <option value="ATX">Austin</option>
@@ -34,22 +34,20 @@
           <option value="SD">San Diego</option>
         </select>
     </label><br>
-    <label>Time:
-      <input type="time" name="departure">
+    <label>Date:
+      <input type="date" name="arrival">
     </label><br>
 
   <input class="new-flight-btn" type="submit" value="Add Destination">
 </form> 
 
-<form id="edit-flight-form">
   <table>
     <thead>
       <tr>
         <th>Airline</th>
         <th>Flight #</th>
-        <th>Destination</th>
-        <!-- <th>Arrival</th>
-        <th>Destination</th> -->
+        <th>Arrival</th>
+        <th>Airprt</th>
       </tr>
     </thead>
     <tbody>
@@ -57,10 +55,10 @@
         <td><%= flight.airline %></td>
         <td><%= flight.flightNo %></td>
         <td><%= flight.arrival %></td>
+        <td><%= flight.airport %></td>
       </tr>
     </tbody>
   </table>   
-</form> <br>
 
 
 </body>

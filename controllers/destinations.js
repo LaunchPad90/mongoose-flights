@@ -1,15 +1,24 @@
-const Destination = require('../models/flight');
+const Flight = require('../models/flight');
 
 module.exports = {
-    create
+    create,
+    show
 }
 
 function create(req, res) {
-Destination.find({}, function(err, destination) {
-    console.log(req.body)
-    res.redirect('flights/:id', {
-    destination
+    Flight.findById(req.params.flightId, function(err, flight) {
+        console.log('create', req.body)
+        flight.destination.push(req.body);
+        flight.save(function(err) {
+            res.redirect(`/flights/${flight._id}`);
+        });
     });
-});
+}
+function show(req, res) {
+  console.log(req.body)
+  Flight.findById(req.params.id, function(err, flight) {
+    res.render('flights/show', { title: 'Edit Flight', flight });
+    console.log('destRT', flight)
+  });
 }
 
