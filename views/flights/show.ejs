@@ -1,28 +1,68 @@
 <%- include ../partials/header %> 
 
 <body>
-  <form id="edit-flight-form" action="flights/<% flight._id %> " method="POST">
+  <form id="edit-flight-form">
     <table>
       <thead>
         <tr>
           <th>Airline</th>
           <th>Flight #</th>
+          <th>Departs From</th>
           <th>Departure Date</th>
-          <th>Airport</th>
-          <th>Arrival</th>
+          <!-- <th>Arrival</th>
+          <th>Destination</th> -->
         </tr>
       </thead>
       <tbody>
-          <tr>
-            <td><%= flight.airline %></td>
-            <td><%= flight.flightNo %></td>
-            <td><%= flight.departure %></td>
-            <td><%= flight.airport %></td>
-            <td><%= flight.arrival %></td>
-          </tr>
-        </tbody>
-      </table>   
-  </form> 
-  </body>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.departure %></td>
+          <td><%= flight.arrival %></td>
+        </tr>
+      </tbody>
+    </table>   
+  </form> <br>
+  <form id="new-flight-form" method="POST" action="/show">
+    <label>Destination:
+      <select name="airport">
+          <option value="ATX">Austin</option>
+          <option value="DFW">Dalla</option>
+          <option value="DEN">Denver</option>
+          <option value="LAX">Los Angeles</option>
+          <option value="SD">San Diego</option>
+        </select>
+    </label><br>
+    <label>Time:
+      <input type="time" name="departure">
+    </label><br>
+
+  <input class="new-flight-btn" type="submit" value="Add Destination">
+</form> 
+
+<form id="edit-flight-form">
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Flight #</th>
+        <th>Destination</th>
+        <!-- <th>Arrival</th>
+        <th>Destination</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= flight.airline %></td>
+        <td><%= flight.flightNo %></td>
+        <td><%= flight.arrival %></td>
+      </tr>
+    </tbody>
+  </table>   
+</form> <br>
+
+
+</body>
   
 <%- include ../partials/footer %>

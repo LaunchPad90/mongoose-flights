@@ -47,6 +47,7 @@
   
   table {
     font-size: 20px;
+    margin: 0 auto;
   }
   
   table thead th {
@@ -65,9 +66,10 @@
       grid-template-columns: auto;
   }
 
-  #new-flight-btn {
+  .new-flight-btn {
       padding: 5px;
       font-size: 1rem;
+      margin: 0 auto;
   }
 
   #show-page {
