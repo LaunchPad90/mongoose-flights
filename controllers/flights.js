@@ -35,6 +35,6 @@ function show(req, res) {
   console.log(req.body)
   Flight.findById(req.params.id, function(err, flight) {
     res.render('flights/show', { title: 'Edit Flight', flight });
-    console.log('poop', flight)
+    console.log('poop2', flight)
   });
 }

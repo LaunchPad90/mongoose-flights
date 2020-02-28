@@ -1,34 +1,12 @@
 <%- include ../partials/header %> 
 
 <body>
-  <form id="edit-flight-form">
-    <table>
-      <thead>
-        <tr>
-          <th>Airline</th>
-          <th>Flight #</th>
-          <th>Departs From</th>
-          <th>Departure Date</th>
-          <!-- <th>Arrival</th>
-          <th>Destination</th> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= flight.airline %></td>
-          <td><%= flight.flightNo %></td>
-          <td><%= flight.airport %></td>
-          <td><%= flight.departure %></td>
-          <td><%= flight.arrival %></td>
-        </tr>
-      </tbody>
-    </table>   
-  </form> <br>
-  <form id="new-flight-form" method="POST" action="/destinations/<%= flight._id %>">
+  
+  <form class="new-flight-btn" action="/destinations/<%= flight._id %>" method="POST">
     <label>Destination:
       <select name="airport">
           <option value="ATX">Austin</option>
-          <option value="DFW">Dalla</option>
+          <option value="DFW">Dallas</option>
           <option value="DEN">Denver</option>
           <option value="LAX">Los Angeles</option>
           <option value="SD">San Diego</option>
@@ -44,19 +22,18 @@
   <table>
     <thead>
       <tr>
-        <th>Airline</th>
-        <th>Flight #</th>
+        <th>Airport</th>
         <th>Arrival</th>
-        <th>Airprt</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><%= flight.airline %></td>
-        <td><%= flight.flightNo %></td>
-        <td><%= flight.arrival %></td>
-        <td><%= flight.airport %></td>
-      </tr>
+      <% flight.destination.forEach(function(d) { %>
+        <tr>
+          <td><%= d.airport %></td>
+          <td><%= d.arrival %></td>  
+        </tr>
+      <% }) %> 
+      
     </tbody>
   </table>   
 
