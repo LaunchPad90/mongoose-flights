@@ -23,7 +23,6 @@ function newFlight(req, res) {
   // res.render('flights/new', { title: 'New Flight' });
 }
 function create(req, res) {
-  console.log(req.body)
   if (req.body.departure === '') delete req.body.departure;
   console.log(req.body);
   const flight = new Flight(req.body);

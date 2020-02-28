@@ -8,8 +8,8 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
-var showRouter = require('./routes/show');
 var destRouter = require('./routes/destinations');
+var ticketsRouter = require('./routes/tickets');
 
 var app = express();
 
@@ -24,9 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/destinations', destRouter);
 app.use('/flights', flightsRouter);
-app.use('/show', showRouter);
+app.use('/', ticketsRouter);
+app.use('/destinations', destRouter);
 
 
 // catch 404 and forward to error handler
