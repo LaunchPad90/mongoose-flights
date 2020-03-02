@@ -32,7 +32,9 @@ function create(req, res) {
 }
 function show(req, res) {
   console.log(req.body)
-  Flight.findById(req.params.id, function(err, flight) {
+  Flight.findById(req.params.id)
+  .populate('tickets').exec(function(err, flight) {
+    console.log('.populate: ', flight)
     res.render('flights/show', { title: 'Edit Flight', flight });
     console.log('poop2', flight)
   });

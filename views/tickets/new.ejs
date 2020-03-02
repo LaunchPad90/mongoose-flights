@@ -2,6 +2,7 @@
 
 <table>
     <thead>
+      <tr></tr>
       <tr>
         <th>Seat</th>
         <th>Price</th>
@@ -9,8 +10,12 @@
       </tr>
     </thead>
     <tbody>
-  
-      
+      <form action="/flights/<%= flight._id %>/tickets" method="POST"> 
+        <input placeholder="ex: A-F 1-99" name="seat" required pattern="[A-F][1-9]\d?">
+        $<input type="number" name="price">
+        <%= flight.flightNo  %>
+        <button type="submit">Submit</button>
+      </form>
     </tbody>
   </table>   
       

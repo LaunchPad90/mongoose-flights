@@ -39,6 +39,18 @@
   <br>
 <a id="ticket-btn" href="/flights/<%= flight._id %>/tickets/new">Purchase Ticket</a>
 
+<br>
+<table>
+  <thead>Purchased</thead>
+  <% flight.tickets.forEach(function(f) { %>
+    <%= f.seat %> 
+    <%= f.price %> 
+  <% }) %>
+  <tbody>
+    <td><%=  %></td>
+  </tbody>
+</table>
+
 </body>
   
 <%- include ../partials/footer %>
