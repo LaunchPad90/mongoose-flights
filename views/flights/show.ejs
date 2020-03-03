@@ -41,13 +41,19 @@
 
 <br>
 <table>
-  <thead>Purchased</thead>
-  <% flight.tickets.forEach(function(f) { %>
-    <%= f.seat %> 
-    <%= f.price %> 
-  <% }) %>
+  <thead>
+    <th>
+      Seat
+    </th>
+    <th>
+      Price
+    </th> 
+  </thead>
   <tbody>
-    <td><%=  %></td>
+    <% flight.tickets.forEach(function(f) { %>
+      <td><%= f.seat %></td> 
+      <td><%= f.price %></td> 
+    <% }) %>
   </tbody>
 </table>
 

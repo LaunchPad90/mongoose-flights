@@ -1,5 +1,4 @@
 const Flight = require('../models/flight');
-const flightsCtrl = require('../routes/flights')
 
 module.exports = {
     index,

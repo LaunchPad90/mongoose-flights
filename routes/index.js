@@ -5,7 +5,7 @@ mongoose.connect('localhost/flights')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Your Flights' });
+  res.render('index', { title: 'Mongoose Flights Lab' });
 });
 
 module.exports = router;
