@@ -1,6 +1,11 @@
 <%- include ../partials/header %> 
 
 <body>
+
+  <%= flight.airline %> 
+  <%= flight.flightNo %> 
+  <%= flight.departure %> 
+  <%= flight.airport %> 
   
   <form class="new-flight-btn" action="/destinations/<%= flight._id %>" method="POST">
     <label>Destination:

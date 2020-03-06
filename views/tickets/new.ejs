@@ -4,6 +4,10 @@
     <thead>
       <tr></tr>
       <tr>
+        <th>Airline</th>
+        <th>Departure</th>
+        <th>Airport</th>
+        <th>Destination</th>
         <th>Seat</th>
         <th>Price</th>
         <th>Flight</th>
@@ -11,6 +15,10 @@
     </thead>
     <tbody>
       <form action="/flights/<%= flight._id %>/tickets" method="POST"> 
+        <td><%= flight.airline %></td>
+        <td><%= flight.departure %></td>
+        <td><%= flight.airport %></td>
+        <td><%= flight.destination.airport %></td>
         <td><input placeholder="ex: A-F 1-99" name="seat" required pattern="[A-F][1-9]\d?"></td>
         <td>
           $<input type="number" name="price">
